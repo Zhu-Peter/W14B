@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from 'vue-router';
-import Home from './views/LoginView';
-import Game from './views/GameView'
+import Home from './src/views/LoginView';
+import Game from './src/views/GameView.vue';
 
 Vue.use(Router)
 
@@ -20,3 +20,5 @@ const router = new Router({
         }
     ]
 })
+
+export default router;
