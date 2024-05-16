@@ -13,6 +13,7 @@
 <script>
 import GameButton from '@/components/GameButton.vue';
 import ScoreBoard from '@/components/ScoreBoard.vue';
+import Cookies from 'vue-cookies';
     export default {
         components:{
             GameButton, ScoreBoard
@@ -32,11 +33,16 @@ import ScoreBoard from '@/components/ScoreBoard.vue';
                 }else{
                     this.score.losses++
                 }
+                Cookies.set('GameScore', this.score)
             }
+        },
+        beforeMount() {
+            this.score = Cookies.get('GameScore')
+            
         },
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 
 </style>
